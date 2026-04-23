@@ -370,7 +370,7 @@
     <div class="kpi"><div class="kpi-label">Store Locations</div><div class="kpi-value">86</div><div class="kpi-sub">incl. 355CD Central Delivery</div></div>
     <div class="kpi"><div class="kpi-label">Store Fleet</div><div class="kpi-value">438</div><div class="kpi-sub">active forklifts</div></div>
     <div class="kpi dark"><div class="kpi-label">Avg HPD Benchmark</div><div class="kpi-value">3.322</div><div class="kpi-sub">HPD · business day basis</div></div>
-    <div class="kpi dark"><div class="kpi-label">Avg YS / Unit / Day</div><div class="kpi-value">9.16</div><div class="kpi-sub">yard sales requiring forklift</div></div>
+    <div class="kpi dark"><div class="kpi-label">Avg Yard Sales / Unit / Day</div><div class="kpi-value">9.16</div><div class="kpi-sub">yard sales requiring forklift</div></div>
     <div class="kpi dark"><div class="kpi-label">Avg Cost / Hour</div><div class="kpi-value">$5.26</div><div class="kpi-sub">lifetime maintenance basis</div></div>
     <div class="kpi red"><div class="kpi-label">Flagged Assets</div><div class="kpi-value">43</div><div class="kpi-sub">below 50% function avg HPD</div></div>
   </div>
@@ -609,7 +609,7 @@
       <thead><tr>
         <th>Region</th><th>Store</th><th>Name</th><th>Units</th>
         <th>HPD (proj.)</th><th>vs Avg</th><th>HPD Rank</th>
-        <th>YS/Unit/Day</th><th>Avg Cost/Hr</th>
+        <th>Yard Sales/Unit/Day</th><th>Avg Cost/Hr</th>
         <th>Annual Cost</th><th>Status</th>
       </tr></thead>
       <tbody id="region-stores-body"></tbody>
@@ -982,7 +982,7 @@ function openDrawer(storeNum) {
     <div class="drawer-metrics">
       <div class="drawer-metric"><div class="drawer-metric-label">Avg HPD (proj.)</div><div class="drawer-metric-value">${s.avg_hpd.toFixed(2)}</div><div class="drawer-metric-sub">Rank ${s.hpd_rank} of 85 stores</div></div>
       <div class="drawer-metric"><div class="drawer-metric-label">vs Benchmark</div><div class="drawer-metric-value" style="color:${s.flagged?'#C0392B':s.hpd_vs_avg_pct<0?'#D35400':'#2D6A2D'}">${s.hpd_vs_avg_pct > 0 ? '+' : ''}${s.hpd_vs_avg_pct}%</div><div class="drawer-metric-sub">Benchmark: 3.322 HPD</div></div>
-      <div class="drawer-metric"><div class="drawer-metric-label">YS / Unit / Day</div><div class="drawer-metric-value">${s.ys_per_unit_bday != null ? s.ys_per_unit_bday.toFixed(2) : '—'}</div><div class="drawer-metric-sub">${s.ys_rank ? 'Rank ' + s.ys_rank + ' of 85' : 'No data'}</div></div>
+      <div class="drawer-metric"><div class="drawer-metric-label">Yard Sales / Unit / Day</div><div class="drawer-metric-value">${s.ys_per_unit_bday != null ? s.ys_per_unit_bday.toFixed(2) : '—'}</div><div class="drawer-metric-sub">${s.ys_rank ? 'Rank ' + s.ys_rank + ' of 85' : 'No data'}</div></div>
       <div class="drawer-metric"><div class="drawer-metric-label">Avg Cost / Hr</div><div class="drawer-metric-value">$${s.avg_cph != null ? s.avg_cph.toFixed(2) : '—'}</div><div class="drawer-metric-sub">Fleet avg: $5.29</div></div>
       <div class="drawer-metric"><div class="drawer-metric-label">Annual Fleet Cost</div><div class="drawer-metric-value" style="font-size:16px">$${Math.round(s.total_annual_cost).toLocaleString()}</div><div class="drawer-metric-sub">flat rate basis</div></div>
       <div class="drawer-metric"><div class="drawer-metric-label">12-Mo Yard Sales</div><div class="drawer-metric-value" style="font-size:16px">${s.ys_12mo ? '$' + Math.round(s.ys_12mo).toLocaleString() : '—'}</div><div class="drawer-metric-sub">forklift-required orders</div></div>
@@ -1198,7 +1198,7 @@ function renderBlendedStores() {
           <div class="metric-change positive">${hpdChg} positions</div>
         </div>
         <div class="step-metric">
-          <div class="metric-label">YS Rank</div>
+          <div class="metric-label">Yard Sales Rank</div>
           <div class="metric-val">${r.new_ys_rank || '—'}</div>
           <div class="metric-change ${r.ys_rank_change > 0 ? 'positive' : ''}">${ysChg} positions</div>
         </div>
@@ -1301,7 +1301,7 @@ function renderBlendedStores() {
           <div class="cell-sub">fleet avg $${STORE_AVG_CPH.toFixed(2)}</div>
         </div>
         <div class="store-hdr-cell">
-          <div class="cell-label">YS/Unit/Day</div>
+          <div class="cell-label">Yard Sales/Unit/Day</div>
           <div class="cell-val">${s.ys_per_unit_bday != null ? s.ys_per_unit_bday.toFixed(2) : '—'}</div>
           <div class="cell-sub">rank ${s.ys_rank != null ? s.ys_rank+' / 85' : '—'}</div>
         </div>
@@ -1311,8 +1311,8 @@ function renderBlendedStores() {
           <div class="cell-sub">flat rate</div>
         </div>
         <div class="store-hdr-cell">
-          <div class="cell-label">12-Mo YS</div>
-          <div class="cell-val">${s.ys_12mo != null ? '$'+Math.round(s.ys_12mo).toLocaleString() : '—'}</div>
+          <div class="cell-label">12-Mo Yard Sales</div>
+          <div class="cell-val">${s.ys_12mo != null ? Math.round(s.ys_12mo).toLocaleString() : '—'}</div>
           <div class="cell-sub">forklift orders</div>
         </div>
         <div class="store-hdr-cell" style="flex:1">
@@ -1327,7 +1327,7 @@ function renderBlendedStores() {
           <thead><tr>
             <th style="width:24px"></th><th>Asset</th><th>Type</th><th>Own.</th><th>Age</th>
             <th>HPD</th><th>vs Avg</th><th>Cost/Hr</th>
-            <th>Lifetime Maintenance Spend</th><th>$/Mo</th><th>YS/Unit/Day</th>
+            <th>Lifetime Maintenance Spend</th><th>$/Mo</th><th>Yard Sales/Unit/Day</th>
             <th>Annual Rate</th><th>Status</th>
           </tr></thead>
           <tbody>${assetRows}</tbody>
