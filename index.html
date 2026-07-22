@@ -344,14 +344,14 @@
     <div class="kpi dark"><div class="kpi-label">Annual Fleet Cost</div><div class="kpi-value" id="kpi-cost">$5.42M</div><div class="kpi-sub">flat rate basis</div></div>
     <div class="kpi dark"><div class="kpi-label">Lifetime Maint. Spend</div><div class="kpi-value">$7.86M</div><div class="kpi-sub">adjusted through June 30, 2026</div></div>
     <div class="kpi yellow"><div class="kpi-label">New Units</div><div class="kpi-value">39</div><div class="kpi-sub">insufficient history</div></div>
-    <div class="kpi red"><div class="kpi-label">Underutilized Stores</div><div class="kpi-value" id="kpi-flagged">2</div><div class="kpi-sub">below 50% of function avg HPD</div></div>
+    <div class="kpi red"><div class="kpi-label">Underutilized Stores</div><div class="kpi-value" id="kpi-flagged">3</div><div class="kpi-sub">below 50% of function avg HPD</div></div>
   </div>
 
   <div class="savings-banner">
     <div>
       <h3>Identified Right-Sizing Opportunity</h3>
       <div class="big-num">$386,537</div>
-      <p>45 flagged assets · 24 stores · protected assets excluded · annual flat rate</p>
+      <p>29 targeted removals · 24 stores · protected assets excluded · annual flat rate</p>
       <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.25);font-size:12px;line-height:1.5">
         <strong style="color:#7FE49B">$281,345 realized</strong> via 23 disposed units<br>
         <strong style="color:#FFD27F">$36,280 pending</strong> across remaining Ron-approved removals
@@ -382,11 +382,11 @@
     <div class="savings-divider"></div>
     <div>
       <h3>Fleet Avg YT/Unit/Day</h3>
-      <div class="big-num">10.2</div>
-      <p>yard tickets per active unit per business day</p>
+      <div class="big-num">9.16</div>
+      <p>yard tickets per unit per business day</p>
       <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.25);font-size:12px;line-height:1.5">
-        <strong style="color:#7FE49B">▲0.6 from right-sizing</strong><br>
-        <span style="color:rgba(255,255,255,0.85)">pre-disposal: 9.6 · workload preserved across 23 fewer units</span>
+        <strong style="color:#7FE49B">▲0.48 from right-sizing</strong><br>
+        <span style="color:rgba(255,255,255,0.85)">pre-disposal: 8.68 · workload preserved across 23 fewer units</span>
       </div>
     </div>
   </div>
@@ -469,7 +469,7 @@
 
 <!-- ══════════════════ STORES ══════════════════ -->
 <div id="panel-storesop" class="panel">
-  <div class="alert" style="background:#F4FAF0;border-left:4px solid var(--green);padding:12px 16px;margin-bottom:14px"><strong style="color:var(--green)">Operational view (oldest-first):</strong> Same trigger as the 60% view — a store qualifies for a removal when it has at least one flagged unit. The difference is the <em>target</em>: instead of pulling the lowest-utilized unit, this view pulls the <strong>oldest unit at the store</strong> (respecting min fleet). The flagged unit picks up the freed workload, raising its utilization. Identifies <strong>29 units</strong> across <strong>25 stores</strong> with <strong style="color:var(--green)">$374,308/yr in P&amp;L savings</strong>.</div>
+  <div class="alert" style="background:#F4FAF0;border-left:4px solid var(--green);padding:12px 16px;margin-bottom:14px"><strong style="color:var(--green)">Operational view (oldest-first):</strong> Same trigger as the 60% view — a store qualifies for a removal when it has at least one flagged unit. The difference is the <em>target</em>: instead of pulling the lowest-utilized unit, this view pulls the <strong>oldest unit at the store</strong> (respecting min fleet). The flagged unit picks up the freed workload, raising its utilization. Identifies <strong>29 units</strong> across <strong>24 stores</strong> with <strong style="color:var(--green)">$386,538/yr in P&amp;L savings</strong>.</div>
 
   <div class="kpi-grid">
     <div class="kpi"><div class="kpi-label">Store Locations</div><div class="kpi-value">86</div><div class="kpi-sub">incl. 355CD Central Delivery</div></div>
@@ -575,7 +575,7 @@
     <div class="kpi"><div class="kpi-label">Regions</div><div class="kpi-value">8</div><div class="kpi-sub">store regions</div></div>
     <div class="kpi dark"><div class="kpi-label">Store Avg HPD</div><div class="kpi-value">3.292</div><div class="kpi-sub">business day basis</div></div>
     <div class="kpi dark"><div class="kpi-label">Avg Maint. Cost / Hr</div><div class="kpi-value">$5.62</div><div class="kpi-sub">store fleet average</div></div>
-    <div class="kpi red"><div class="kpi-label">Flagged Stores</div><div class="kpi-value" id="reg-flagged-kpi">2</div><div class="kpi-sub">below 50% of function avg HPD</div></div>
+    <div class="kpi red"><div class="kpi-label">Flagged Stores</div><div class="kpi-value" id="reg-flagged-kpi">3</div><div class="kpi-sub">below 50% of function avg HPD</div></div>
     <div class="kpi dark"><div class="kpi-label">Total Store Fleet Cost</div><div class="kpi-value" id="reg-cost-kpi">$5.42M</div><div class="kpi-sub">annual flat rate</div></div>
   </div>
 
@@ -681,7 +681,7 @@
     </div>
     <div class="kpi" style="border-color:var(--green)">
       <div class="kpi-label">Annual P&amp;L Savings</div>
-      <div class="kpi-value" style="color:var(--green)">$314,569</div>
+      <div class="kpi-value" style="color:var(--green)">$317,626</div>
       <div class="kpi-sub">flat rate basis</div>
     </div>
     <div class="kpi" style="border-color:var(--yellow)">
@@ -817,7 +817,6 @@ function showTab(name) {
   if (name === 'millwork' && !window._mwBuilt) { buildMWCharts(); window._mwBuilt = true; }
   if (name === 'assets' && !window._assetBuilt) { buildAssetFilters(); renderAssetTable(); window._assetBuilt = true; }
   if (name === 'regional' && !window._regBuilt) { buildRegionalTab(); window._regBuilt = true; }
-  if (name === 'storesop' && !window._storesOpBuilt) { renderBlendedStoresOp(); window._storesOpBuilt = true; }
   if (name === 'storesop' && !window._storesOpBuilt) { renderBlendedStoresOp(); window._storesOpBuilt = true; }
   if (name === 'recommend' && !window._recBuilt) { buildRecommendTab(); window._recBuilt = true; }
   if (name === 'ron' && !window._ronBuilt) { buildRonTab(); window._ronBuilt = true; }
