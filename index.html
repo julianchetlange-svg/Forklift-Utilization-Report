@@ -345,15 +345,15 @@
     <div class="kpi" style="border-left:3px solid #2D6A2D"><div class="kpi-label">Top 20 Stores Avg HPD</div><div class="kpi-value" style="color:#2D6A2D">4.17</div><div class="kpi-sub">best-utilized stores · +24.7% vs fleet avg</div></div>
     <div class="kpi dark"><div class="kpi-label">Annual Fleet Cost</div><div class="kpi-value" id="kpi-cost">$5.43M</div><div class="kpi-sub">flat rate basis</div></div>
     <div class="kpi dark"><div class="kpi-label">Lifetime Maint. Spend</div><div class="kpi-value">$8.14M</div><div class="kpi-sub">adjusted through August 28, 2026</div></div>
-    <div class="kpi yellow"><div class="kpi-label">Actionable Flagged Assets</div><div class="kpi-value">26</div><div class="kpi-sub">have viable operational path · 23 with no path</div></div>
+    <div class="kpi yellow"><div class="kpi-label">Actionable Flagged Assets</div><div class="kpi-value">21</div><div class="kpi-sub">have viable operational path · 28 with no path</div></div>
     <div class="kpi red"><div class="kpi-label">Stores Below Company Avg HPD</div><div class="kpi-value" id="kpi-flagged">44</div><div class="kpi-sub">below fleet avg of 3.35</div></div>
     </div>
 
   <div class="savings-banner">
     <div>
       <h3>Identified Right-Sizing Opportunity</h3>
-      <div class="big-num">$354,181</div>
-      <p>26 recommendations · $251,180 firm + $103,000 potential (transfers pending review)</p>
+      <div class="big-num">$287,598</div>
+      <p>21 recommendations · $157,353 firm + $130,245 potential (transfers pending review)</p>
       <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.25);font-size:12px;line-height:1.5">
         <strong style="color:#7FE49B">$281,345 realized</strong> via 23 disposed units<br>
         <strong style="color:#FFD27F">no pending</strong> — all approved removals complete
@@ -481,7 +481,7 @@
 
 <!-- ══════════════════ STORES ══════════════════ -->
 <div id="panel-storesop" class="panel">
-  <div class="alert" style="background:#F4FAF0;border-left:4px solid var(--green);padding:12px 16px;margin-bottom:14px"><strong style="color:var(--green)">Operational view (flag-triggered):</strong> Every recommendation is driven by underutilization — a unit below 60% of fleet avg HPD (2.01) triggers action at its store. For each flag we evaluate: (1) in-store consolidation (remove older, higher-CPH unit and let the flagged unit absorb workload), (2) inter-store transfer (move flagged unit to a nearby non-flagged store and retire that store's older/costlier same-type unit), or (3) direct removal of the flagged unit if no better target exists. All recommendations respect the 2×(3K/4K/6K) + 1×(8K/10K) minimum fleet standard. Identifies <strong>19 firm removals</strong> ($251,180/yr) + <strong>7 potential transfers</strong> ($103,000/yr) across <strong>24 stores</strong>. Transfers require Fleet team disposition review.</div>
+  <div class="alert" style="background:#F4FAF0;border-left:4px solid var(--green);padding:12px 16px;margin-bottom:14px"><strong style="color:var(--green)">Operational view (flag-triggered):</strong> Every recommendation is driven by underutilization — a unit below 60% of fleet avg HPD (2.01) triggers action at its store. For each flag we evaluate: (1) in-store consolidation (remove older, higher-CPH unit and let the flagged unit absorb workload), (2) inter-store transfer (move flagged unit to a nearby non-flagged store and retire that store's older/costlier same-type unit), or (3) direct removal of the flagged unit if no better target exists. <strong>Conservative filter added:</strong> the store where the removal occurs must have overall avg HPD below fleet avg (3.35). This ensures we only right-size at stores that are demonstrably under-utilized as a whole. All recommendations respect the 2×(3K/4K/6K) + 1×(8K/10K) minimum fleet standard. Identifies <strong>12 firm removals</strong> ($157,353/yr) + <strong>9 potential transfers</strong> ($130,245/yr) across <strong>20 below-avg stores</strong>. Rule: removal store must be below fleet avg HPD. Transfers require Fleet team disposition review.</div>
 
   <div class="kpi-grid">
     <div class="kpi"><div class="kpi-label">Store Locations</div><div class="kpi-value">86</div><div class="kpi-sub">incl. 355CD Central Delivery</div></div>
@@ -491,7 +491,7 @@
     <div class="kpi dark"><div class="kpi-label">Avg Yard Tickets / Unit / Day</div><div class="kpi-value">9.44</div><div class="kpi-sub">yard sales requiring forklift</div></div>
     <div class="kpi" style="border-left:3px solid #2D6A2D"><div class="kpi-label">Top 20 Stores Avg YT/Unit/Day</div><div class="kpi-value" style="color:#2D6A2D">10.97</div><div class="kpi-sub">best-utilized stores · +16.2% vs fleet avg</div></div>
     <div class="kpi dark"><div class="kpi-label">Avg Cost / Hour</div><div class="kpi-value">$5.40</div><div class="kpi-sub">lifetime maintenance basis</div></div>
-    <div class="kpi red"><div class="kpi-label">Actionable Flagged Assets</div><div class="kpi-value">26</div><div class="kpi-sub">have viable operational path · 23 locked</div></div>
+    <div class="kpi red"><div class="kpi-label">Actionable Flagged Assets</div><div class="kpi-value">21</div><div class="kpi-sub">have viable operational path · 28 locked</div></div>
   </div>
 
   <div class="alert alert-green"><strong>Current data:</strong> Hour meter readings projected to <strong>August 28, 2026</strong> using each asset's lifetime monthly run rate, with DVIR data validated by three rules (backward moves, impossible daily gains, absolute sanity check against age) and cross-checked against the projected baseline (±20% tolerance before falling back to formula projection). Lifetime maintenance spend rebuilt from pre-March baseline + April-July increment + August MTD, current through <strong>August 28, 2026</strong>.</div>
@@ -776,17 +776,19 @@
 
   <div class="alert" style="background:#F4FAF0;border-left:4px solid var(--green);padding:12px 16px;margin-bottom:14px">
     <strong style="color:var(--green)">Methodology:</strong>
-    Every recommendation is driven by underutilization — a unit below 60% of fleet avg HPD (2.007) triggers action at its store.
+    Every recommendation is driven by underutilization — a unit below 60% of fleet avg HPD (2.007) triggers action.
     For each flag we evaluate: (1) in-store consolidation, (2) inter-store transfer (analyst suggestion, needs Fleet team review), or (3) direct removal.
+    <strong>Conservative filter:</strong> the store where the removal occurs must have overall avg HPD below fleet avg (3.35).
+    This ensures we only right-size at stores that are demonstrably under-utilized as a whole.
     All recommendations respect the 2×(3K/4K/6K) + 1×(8K/10K) minimum fleet standard.
   </div>
 
   <div class="kpi-grid">
-    <div class="kpi"><div class="kpi-label">Firm Removals</div><div class="kpi-value">19</div><div class="kpi-sub">ready for Ron approval</div></div>
-    <div class="kpi" style="border-left:3px solid var(--green)"><div class="kpi-label">Firm Annual Savings</div><div class="kpi-value" style="color:var(--green)">$251,180</div><div class="kpi-sub">flat rate basis</div></div>
-    <div class="kpi yellow"><div class="kpi-label">Potential Transfers</div><div class="kpi-value">7</div><div class="kpi-sub">for Fleet team review</div></div>
-    <div class="kpi yellow"><div class="kpi-label">Additional if Transfers Approved</div><div class="kpi-value">$103,000</div><div class="kpi-sub">requires disposition decision</div></div>
-    <div class="kpi dark"><div class="kpi-label">Combined Potential</div><div class="kpi-value">$354,181</div><div class="kpi-sub">across 24 flagged stores</div></div>
+    <div class="kpi"><div class="kpi-label">Firm Removals</div><div class="kpi-value">12</div><div class="kpi-sub">ready for Ron approval</div></div>
+    <div class="kpi" style="border-left:3px solid var(--green)"><div class="kpi-label">Firm Annual Savings</div><div class="kpi-value" style="color:var(--green)">$157,353</div><div class="kpi-sub">flat rate basis</div></div>
+    <div class="kpi yellow"><div class="kpi-label">Potential Transfers</div><div class="kpi-value">9</div><div class="kpi-sub">for Fleet team review</div></div>
+    <div class="kpi yellow"><div class="kpi-label">Additional if Transfers Approved</div><div class="kpi-value">$130,245</div><div class="kpi-sub">requires disposition decision</div></div>
+    <div class="kpi dark"><div class="kpi-label">Combined Potential</div><div class="kpi-value">$287,598</div><div class="kpi-sub">across 20 below-avg stores</div></div>
   </div>
 
   <div class="section-hdr" style="margin-top:18px"><h2>Regional Breakdown</h2></div>
@@ -807,19 +809,19 @@
     </tr><tr>
       <td><strong>Region 02</strong></td>
       <td class="num">3</td>
-      <td class="num">4</td>
-      <td class="num">2</td>
+      <td class="num">3</td>
+      <td class="num">1</td>
       <td class="num">0</td>
-      <td class="num"><strong style="color:var(--green)">$27,245</strong></td>
+      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td class="num">2</td>
       <td class="num"><strong style="color:#B58900">$30,302</strong></td>
     </tr><tr>
       <td><strong>Region 03</strong></td>
-      <td class="num">3</td>
-      <td class="num">3</td>
+      <td class="num">2</td>
       <td class="num">2</td>
       <td class="num">1</td>
-      <td class="num"><strong style="color:var(--green)">$42,396</strong></td>
+      <td class="num">1</td>
+      <td class="num"><strong style="color:var(--green)">$30,302</strong></td>
       <td class="num">0</td>
       <td class="num"><strong style="color:#B58900">$0</strong></td>
     </tr><tr>
@@ -842,36 +844,36 @@
       <td class="num"><strong style="color:#B58900">$0</strong></td>
     </tr><tr>
       <td><strong>Region 06</strong></td>
+      <td class="num">2</td>
       <td class="num">3</td>
-      <td class="num">4</td>
-      <td class="num">2</td>
-      <td class="num">2</td>
-      <td class="num"><strong style="color:var(--green)">$51,432</strong></td>
-      <td class="num">0</td>
-      <td class="num"><strong style="color:#B58900">$0</strong></td>
+      <td class="num">1</td>
+      <td class="num">1</td>
+      <td class="num"><strong style="color:var(--green)">$24,187</strong></td>
+      <td class="num">1</td>
+      <td class="num"><strong style="color:#B58900">$15,151</strong></td>
     </tr><tr>
       <td><strong>Region 07</strong></td>
-      <td class="num">2</td>
-      <td class="num">2</td>
       <td class="num">1</td>
       <td class="num">1</td>
-      <td class="num"><strong style="color:var(--green)">$27,245</strong></td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td class="num">0</td>
       <td class="num"><strong style="color:#B58900">$0</strong></td>
     </tr><tr>
       <td><strong>Region 08</strong></td>
-      <td class="num">5</td>
-      <td class="num">5</td>
-      <td class="num">2</td>
+      <td class="num">4</td>
+      <td class="num">4</td>
+      <td class="num">0</td>
       <td class="num">1</td>
-      <td class="num"><strong style="color:var(--green)">$36,281</strong></td>
-      <td class="num">2</td>
-      <td class="num"><strong style="color:#B58900">$30,302</strong></td>
+      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
+      <td class="num">3</td>
+      <td class="num"><strong style="color:#B58900">$42,396</strong></td>
     </tr></tbody>
     </table>
   </div>
 
-  <div class="section-hdr" style="margin-top:20px"><h2>Firm Recommendations (19 · $251,180/yr)</h2></div>
+  <div class="section-hdr" style="margin-top:20px"><h2>Firm Recommendations (12 · $157,353/yr)</h2></div>
   <p style="font-size:12px;color:#666;margin:0 0 10px 0">In-store consolidation (green) or direct flagged removal (pink). No cross-store coordination required — ready for immediate approval.</p>
   <div class="table-wrap">
     <table>
@@ -912,20 +914,6 @@
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
     </tr><tr style="background:#E8F5E9">
       <td>Region 02</td>
-      <td>18</td>
-      <td>Abilene</td>
-      <td>382018</td>
-      <td class="num">1.56</td>
-      <td class="num">$2.92</td>
-      <td>In-Store Consolidation</td>
-      <td>382061</td>
-      <td>8K Yard Forklift</td>
-      <td class="num">51.8mo</td>
-      <td class="num">1.51</td>
-      <td class="num">$10.99</td>
-      <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 02</td>
       <td>115</td>
       <td>Midlothian</td>
       <td>381085</td>
@@ -952,20 +940,6 @@
       <td class="num">1.63</td>
       <td class="num">$21.31</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 03</td>
-      <td>57</td>
-      <td>Tomball</td>
-      <td>384062</td>
-      <td class="num">1.95</td>
-      <td class="num">$3.52</td>
-      <td>In-Store Consolidation</td>
-      <td>378008</td>
-      <td>6K Yard Forklift</td>
-      <td class="num">101.9mo</td>
-      <td class="num">3.68</td>
-      <td class="num">$5.93</td>
-      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
     </tr><tr style="background:#E8F5E9">
       <td>Region 03</td>
       <td>113</td>
@@ -1022,34 +996,6 @@
       <td class="num">2.48</td>
       <td class="num">$11.41</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 06</td>
-      <td>30</td>
-      <td>San Angelo</td>
-      <td>384016</td>
-      <td class="num">1.34</td>
-      <td class="num">$6.88</td>
-      <td>In-Store Consolidation</td>
-      <td>381035</td>
-      <td>6K Yard Forklift</td>
-      <td class="num">53.2mo</td>
-      <td class="num">2.75</td>
-      <td class="num">$8.07</td>
-      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#FEF0F0">
-      <td>Region 06</td>
-      <td>35</td>
-      <td>Odessa</td>
-      <td>381072</td>
-      <td class="num">1.61</td>
-      <td class="num">$14.78</td>
-      <td>Direct Flagged Removal</td>
-      <td>381072</td>
-      <td>8K Yard Forklift</td>
-      <td class="num">52.0mo</td>
-      <td class="num">1.61</td>
-      <td class="num">$14.78</td>
-      <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
     </tr><tr style="background:#FEF0F0">
       <td>Region 06</td>
       <td>119</td>
@@ -1093,48 +1039,6 @@
       <td class="num">$5.89</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
     </tr><tr style="background:#FEF0F0">
-      <td>Region 07</td>
-      <td>70</td>
-      <td>San Marcos</td>
-      <td>384017</td>
-      <td class="num">1.36</td>
-      <td class="num">$6.02</td>
-      <td>Direct Flagged Removal</td>
-      <td>384017</td>
-      <td>8K Yard Forklift</td>
-      <td class="num">31.1mo</td>
-      <td class="num">1.36</td>
-      <td class="num">$6.02</td>
-      <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 08</td>
-      <td>55</td>
-      <td>Georgetown</td>
-      <td>383086</td>
-      <td class="num">0.36</td>
-      <td class="num">$4.24</td>
-      <td>In-Store Consolidation</td>
-      <td>378034</td>
-      <td>6K Yard Forklift</td>
-      <td class="num">98.2mo</td>
-      <td class="num">3.74</td>
-      <td class="num">$5.03</td>
-      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 08</td>
-      <td>62</td>
-      <td>Austin Manchaca</td>
-      <td>384028</td>
-      <td class="num">1.78</td>
-      <td class="num">$2.70</td>
-      <td>In-Store Consolidation</td>
-      <td>382079</td>
-      <td>6K Yard Forklift</td>
-      <td class="num">50.1mo</td>
-      <td class="num">3.21</td>
-      <td class="num">$6.51</td>
-      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#FEF0F0">
       <td>Region 08</td>
       <td>117</td>
       <td>Liberty Hill</td>
@@ -1152,8 +1056,8 @@
     </table>
   </div>
 
-  <div class="section-hdr" style="margin-top:20px"><h2>Potential Transfers (7 · $103,000/yr)</h2></div>
-  <p style="font-size:12px;color:#666;margin:0 0 10px 0">Analyst suggestions — flagged unit moves to a nearby non-flagged store in the same region and retires that store's older/higher-CPH same-type unit. Mark each Include/Exclude based on logistics feasibility.</p>
+  <div class="section-hdr" style="margin-top:20px"><h2>Potential Transfers (9 · $130,245/yr)</h2></div>
+  <p style="font-size:12px;color:#666;margin:0 0 10px 0">Analyst suggestions — flagged unit moves to a below-avg store in the same region and retires that store's older/higher-CPH same-type unit. Mark each Include/Exclude based on logistics feasibility.</p>
   <div class="table-wrap">
     <table>
       <thead><tr>
@@ -1216,6 +1120,17 @@
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option value="include">Include</option><option value="exclude">Exclude</option></select></td>
     </tr><tr style="background:#FFF8E1">
+      <td>Region 06</td>
+      <td>30</td>
+      <td>San Angelo</td>
+      <td>#384016 (8K Yard Forklift)</td>
+      <td class="num">1.34</td>
+      <td>→ 87</td>
+      <td>Fort Stockton</td>
+      <td>#382063 (51.9mo, $16.19/hr)</td>
+      <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
+      <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option value="include">Include</option><option value="exclude">Exclude</option></select></td>
+    </tr><tr style="background:#FFF8E1">
       <td>Region 08</td>
       <td>10</td>
       <td>Belton</td>
@@ -1225,6 +1140,17 @@
       <td>Liberty Hill</td>
       <td>#381062 (53.5mo, $9.49/hr)</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
+      <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option value="include">Include</option><option value="exclude">Exclude</option></select></td>
+    </tr><tr style="background:#FFF8E1">
+      <td>Region 08</td>
+      <td>55</td>
+      <td>Georgetown</td>
+      <td>#383086 (6K Yard Forklift)</td>
+      <td class="num">0.36</td>
+      <td>→ 118</td>
+      <td>Spicewood</td>
+      <td>#381027 (52.0mo, $11.47/hr)</td>
+      <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option value="include">Include</option><option value="exclude">Exclude</option></select></td>
     </tr><tr style="background:#FFF8E1">
       <td>Region 08</td>
@@ -1242,6 +1168,7 @@
   </div>
 
 </div>
+
 
 
 
@@ -1275,12 +1202,12 @@ const FLEET_TOTALS = {
   "flagged_assets": 49,
   "flagged_stores": 0,
   "flagged_removable": 23,
-  "flagged_protected": 23,
+  "flagged_protected": 28,
   "total_annual_cost": 5428799.92,
   "total_maintenance_spend": 8139937.12,
   "new_assets": 0,
   "as_of_date": "2026-08-28",
-  "flagged_actionable": 26,
+  "flagged_actionable": 21,
   "flagged_assets_total": 49,
   "stores_below_avg_hpd": 44
 };
@@ -2947,7 +2874,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #381041 to Store 117 Liberty Hill, retire their #381062."
+          "note": "Potential transfer — move flagged #381041 to Store 117 Liberty Hill (below-avg store), retire their #381062."
         }
       ],
       "proj_savings": 15151.13,
@@ -3099,7 +3026,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "Direct removal of flagged #381065."
+          "note": "Direct removal of flagged #381065 at below-avg store."
         }
       ],
       "proj_savings": 15151.13,
@@ -3292,46 +3219,19 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #382061 to Store 115 Midlothian, retire their #381085."
-        },
-        {
-          "asset": 382061,
-          "type": "8K Yard Forklift",
-          "age_mo": 51.8,
-          "annual_rate": 15151.13,
-          "hpd": 1.513,
-          "cph": 10.99,
-          "is_flagged": true,
-          "target_reason": "consolidation",
-          "trigger_asset": 382018,
-          "trigger_hpd": 1.562,
-          "trigger_cph": 2.92,
-          "trigger_type": "6K Yard Forklift",
-          "trigger_store": "18",
-          "trigger_store_name": "Abilene",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 2,
-          "new_hpd_rank": 10,
-          "hpd_rank_change": -16,
-          "new_ys_rank": 49,
-          "ys_rank_change": -16,
-          "tier_tag": "top20",
-          "cumulative_savings": 30302.26,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #382018 absorbs freed workload."
+          "note": "Potential transfer — move flagged #382061 to Store 115 Midlothian (below-avg store), retire their #381085."
         }
       ],
-      "proj_savings": 30302.26,
+      "proj_savings": 15151.13,
       "new_total_count": 6,
       "new_avg_hpd": 3.991,
       "new_ys_per_unit_bday": 8.8,
-      "firm_savings": 15151.13,
+      "firm_savings": 0,
       "potential_savings": 15151.13
     },
     "proj_hpd": 3.991,
     "proj_ys_per_unit": 8.8,
-    "proj_savings": 30302.26,
+    "proj_savings": 15151.13,
     "yt_tier": "middle",
     "disposed_count": 0,
     "disposed_assets": [],
@@ -3473,7 +3373,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "Direct removal of flagged #381067."
+          "note": "Direct removal of flagged #381067 at below-avg store."
         }
       ],
       "proj_savings": 15151.13,
@@ -3681,43 +3581,43 @@ const STORE_SUMMARY = [
     "removal_impact": {
       "removals": [
         {
-          "asset": 381035,
-          "type": "6K Yard Forklift",
-          "age_mo": 53.2,
-          "annual_rate": 12093.54,
-          "hpd": 2.75,
-          "cph": 8.07,
-          "is_flagged": false,
-          "target_reason": "consolidation",
+          "asset": 382063,
+          "type": "8K Yard Forklift",
+          "age_mo": 51.9,
+          "annual_rate": 15151.13,
+          "hpd": 0.734,
+          "cph": 16.19,
+          "is_flagged": true,
+          "target_reason": "transfer",
           "trigger_asset": 384016,
           "trigger_hpd": 1.344,
           "trigger_cph": 6.88,
           "trigger_type": "8K Yard Forklift",
           "trigger_store": "30",
           "trigger_store_name": "San Angelo",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
+          "transfer_to_store": "87",
+          "transfer_to_store_name": "Fort Stockton",
           "step": 1,
           "new_hpd_rank": 15,
           "hpd_rank_change": -27,
           "new_ys_rank": 21,
           "ys_rank_change": -21,
           "tier_tag": "top20",
-          "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #384016 absorbs freed workload."
+          "cumulative_savings": 15151.13,
+          "status_label": "potential",
+          "note": "Potential transfer — move flagged #384016 to Store 87 Fort Stockton (below-avg store), retire their #382063."
         }
       ],
-      "proj_savings": 12093.54,
+      "proj_savings": 15151.13,
       "new_total_count": 6,
-      "new_avg_hpd": 3.466,
+      "new_avg_hpd": 3.7,
       "new_ys_per_unit_bday": 11.13,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
+      "firm_savings": 0,
+      "potential_savings": 15151.13
     },
-    "proj_hpd": 3.466,
+    "proj_hpd": 3.7,
     "proj_ys_per_unit": 11.13,
-    "proj_savings": 12093.54,
+    "proj_savings": 15151.13,
     "yt_tier": "middle",
     "disposed_count": 1,
     "disposed_assets": [
@@ -3857,7 +3757,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 12093.54,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #382019 to Store 43 Huntsville, retire their #381008."
+          "note": "Potential transfer — move flagged #382019 to Store 43 Huntsville (below-avg store), retire their #381008."
         }
       ],
       "proj_savings": 12093.54,
@@ -3906,46 +3806,10 @@ const STORE_SUMMARY = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 381072,
-          "type": "8K Yard Forklift",
-          "age_mo": 52.0,
-          "annual_rate": 15151.13,
-          "hpd": 1.606,
-          "cph": 14.78,
-          "is_flagged": true,
-          "target_reason": "direct",
-          "trigger_asset": 381072,
-          "trigger_hpd": 1.606,
-          "trigger_cph": 14.78,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "35",
-          "trigger_store_name": "Odessa",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 13,
-          "hpd_rank_change": -16,
-          "new_ys_rank": 38,
-          "ys_rank_change": -14,
-          "tier_tag": "top20",
-          "cumulative_savings": 15151.13,
-          "status_label": "firm",
-          "note": "Direct removal of flagged #381072."
-        }
-      ],
-      "proj_savings": 15151.13,
-      "new_total_count": 6,
-      "new_avg_hpd": 3.855,
-      "new_ys_per_unit_bday": 9.73,
-      "firm_savings": 15151.13,
-      "potential_savings": 0
-    },
-    "proj_hpd": 3.855,
-    "proj_ys_per_unit": 9.73,
-    "proj_savings": 15151.13,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 1,
     "disposed_assets": [
@@ -4009,7 +3873,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #382060 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #382060 absorbs freed workload."
         }
       ],
       "proj_savings": 15151.13,
@@ -4202,7 +4066,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384021 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384021 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -4390,7 +4254,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384014 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384014 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -4464,7 +4328,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #384025 to Store 90 Okmulgee, retire their #384031."
+          "note": "Potential transfer — move flagged #384025 to Store 90 Okmulgee (below-avg store), retire their #384031."
         }
       ],
       "proj_savings": 15151.13,
@@ -4538,7 +4402,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #384024 to Store 71 Nacogdoches, retire their #381081."
+          "note": "Potential transfer — move flagged #384024 to Store 71 Nacogdoches (below-avg store), retire their #381081."
         }
       ],
       "proj_savings": 15151.13,
@@ -4704,22 +4568,22 @@ const STORE_SUMMARY = [
     "removal_impact": {
       "removals": [
         {
-          "asset": 378034,
+          "asset": 381027,
           "type": "6K Yard Forklift",
-          "age_mo": 98.2,
+          "age_mo": 52.0,
           "annual_rate": 12093.54,
-          "hpd": 3.736,
-          "cph": 5.03,
+          "hpd": 2.516,
+          "cph": 11.47,
           "is_flagged": false,
-          "target_reason": "consolidation",
+          "target_reason": "transfer",
           "trigger_asset": 383086,
           "trigger_hpd": 0.363,
           "trigger_cph": 4.24,
           "trigger_type": "6K Yard Forklift",
           "trigger_store": "55",
           "trigger_store_name": "Georgetown",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
+          "transfer_to_store": "118",
+          "transfer_to_store_name": "Spicewood",
           "step": 1,
           "new_hpd_rank": 18,
           "hpd_rank_change": -20,
@@ -4727,18 +4591,18 @@ const STORE_SUMMARY = [
           "ys_rank_change": -10,
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #383086 absorbs freed workload."
+          "status_label": "potential",
+          "note": "Potential transfer — move flagged #383086 to Store 118 Spicewood (below-avg store), retire their #381027."
         }
       ],
       "proj_savings": 12093.54,
       "new_total_count": 8,
-      "new_avg_hpd": 3.393,
+      "new_avg_hpd": 3.815,
       "new_ys_per_unit_bday": 8.82,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
+      "firm_savings": 0,
+      "potential_savings": 12093.54
     },
-    "proj_hpd": 3.393,
+    "proj_hpd": 3.815,
     "proj_ys_per_unit": 8.82,
     "proj_savings": 12093.54,
     "yt_tier": "middle",
@@ -4775,46 +4639,10 @@ const STORE_SUMMARY = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 378008,
-          "type": "6K Yard Forklift",
-          "age_mo": 101.9,
-          "annual_rate": 12093.54,
-          "hpd": 3.678,
-          "cph": 5.93,
-          "is_flagged": false,
-          "target_reason": "consolidation",
-          "trigger_asset": 384062,
-          "trigger_hpd": 1.949,
-          "trigger_cph": 3.52,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "57",
-          "trigger_store_name": "Tomball",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 15,
-          "hpd_rank_change": -26,
-          "new_ys_rank": 50,
-          "ys_rank_change": -16,
-          "tier_tag": "top20",
-          "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #384062 absorbs freed workload."
-        }
-      ],
-      "proj_savings": 12093.54,
-      "new_total_count": 6,
-      "new_avg_hpd": 3.325,
-      "new_ys_per_unit_bday": 8.69,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
-    },
-    "proj_hpd": 3.325,
-    "proj_ys_per_unit": 8.69,
-    "proj_savings": 12093.54,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 0,
     "disposed_assets": [],
@@ -4952,7 +4780,7 @@ const STORE_SUMMARY = [
           "tier_tag": "bottom20",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "Direct removal of flagged #378016."
+          "note": "Direct removal of flagged #378016 at below-avg store."
         }
       ],
       "proj_savings": 12093.54,
@@ -4999,46 +4827,10 @@ const STORE_SUMMARY = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 382079,
-          "type": "6K Yard Forklift",
-          "age_mo": 50.1,
-          "annual_rate": 12093.54,
-          "hpd": 3.211,
-          "cph": 6.51,
-          "is_flagged": false,
-          "target_reason": "consolidation",
-          "trigger_asset": 384028,
-          "trigger_hpd": 1.783,
-          "trigger_cph": 2.7,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "62",
-          "trigger_store_name": "Austin Manchaca",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 13,
-          "hpd_rank_change": -15,
-          "new_ys_rank": 21,
-          "ys_rank_change": -23,
-          "tier_tag": "top20",
-          "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #384028 absorbs freed workload."
-        }
-      ],
-      "proj_savings": 12093.54,
-      "new_total_count": 6,
-      "new_avg_hpd": 3.596,
-      "new_ys_per_unit_bday": 11.1,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
-    },
-    "proj_hpd": 3.596,
-    "proj_ys_per_unit": 11.1,
-    "proj_savings": 12093.54,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 1,
     "disposed_assets": [
@@ -5227,46 +5019,10 @@ const STORE_SUMMARY = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 384017,
-          "type": "8K Yard Forklift",
-          "age_mo": 31.1,
-          "annual_rate": 15151.13,
-          "hpd": 1.357,
-          "cph": 6.02,
-          "is_flagged": true,
-          "target_reason": "direct",
-          "trigger_asset": 384017,
-          "trigger_hpd": 1.357,
-          "trigger_cph": 6.02,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "70",
-          "trigger_store_name": "San Marcos",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 4,
-          "hpd_rank_change": -13,
-          "new_ys_rank": 21,
-          "ys_rank_change": -16,
-          "tier_tag": "top20",
-          "cumulative_savings": 15151.13,
-          "status_label": "firm",
-          "note": "Direct removal of flagged #384017."
-        }
-      ],
-      "proj_savings": 15151.13,
-      "new_total_count": 7,
-      "new_avg_hpd": 4.219,
-      "new_ys_per_unit_bday": 11.17,
-      "firm_savings": 15151.13,
-      "potential_savings": 0
-    },
-    "proj_hpd": 4.219,
-    "proj_ys_per_unit": 11.17,
-    "proj_savings": 15151.13,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 0,
     "disposed_assets": [],
@@ -5404,7 +5160,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #381084 to Store 121 New Caney, retire their #381051."
+          "note": "Potential transfer — move flagged #381084 to Store 121 New Caney (below-avg store), retire their #381051."
         }
       ],
       "proj_savings": 15151.13,
@@ -5934,7 +5690,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #381076 to Store 58 Gonzales, retire their #381078."
+          "note": "Potential transfer — move flagged #381076 to Store 58 Gonzales (below-avg store), retire their #381078."
         }
       ],
       "proj_savings": 15151.13,
@@ -6008,7 +5764,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384072 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384072 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -6388,7 +6144,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384106 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384106 absorbs freed workload."
         }
       ],
       "proj_savings": 15151.13,
@@ -6500,7 +6256,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #381085 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #381085 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -6612,7 +6368,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "Direct removal of flagged #381036."
+          "note": "Direct removal of flagged #381036 at below-avg store."
         }
       ],
       "proj_savings": 12093.54,
@@ -6726,7 +6482,7 @@ const STORE_SUMMARY = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "Direct removal of flagged #383005."
+          "note": "Direct removal of flagged #383005 at below-avg store."
         },
         {
           "asset": 383015,
@@ -6753,7 +6509,7 @@ const STORE_SUMMARY = [
           "tier_tag": "top20",
           "cumulative_savings": 24187.08,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384004 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384004 absorbs freed workload."
         }
       ],
       "proj_savings": 24187.08,
@@ -6933,12 +6689,12 @@ const REGION_SUMMARY = [
     "hpd_vs_avg_pct": -4.8,
     "disposed_count": 0,
     "disposed_savings": 0,
-    "suggested_removals": 4,
-    "pl_impact": 57546.93,
+    "suggested_removals": 3,
+    "pl_impact": 42395.8,
     "stores_below_avg": 7,
-    "flagged_actionable": 4,
-    "flagged_protected": 5,
-    "firm_savings": 27244.67,
+    "flagged_actionable": 3,
+    "flagged_protected": 6,
+    "firm_savings": 12093.54,
     "potential_savings": 30302.26
   },
   {
@@ -6957,12 +6713,12 @@ const REGION_SUMMARY = [
     "hpd_vs_avg_pct": 3.6,
     "disposed_count": 6,
     "disposed_savings": 78676.42,
-    "suggested_removals": 3,
-    "pl_impact": 42395.8,
+    "suggested_removals": 2,
+    "pl_impact": 30302.26,
     "stores_below_avg": 3,
-    "flagged_actionable": 3,
-    "flagged_protected": 0,
-    "firm_savings": 42395.8,
+    "flagged_actionable": 2,
+    "flagged_protected": 1,
+    "firm_savings": 30302.26,
     "potential_savings": 0.0
   },
   {
@@ -7029,13 +6785,13 @@ const REGION_SUMMARY = [
     "hpd_vs_avg_pct": -9.8,
     "disposed_count": 3,
     "disposed_savings": 36280.62,
-    "suggested_removals": 4,
-    "pl_impact": 51431.75,
+    "suggested_removals": 3,
+    "pl_impact": 39338.21,
     "stores_below_avg": 7,
-    "flagged_actionable": 4,
-    "flagged_protected": 6,
-    "firm_savings": 51431.75,
-    "potential_savings": 0.0
+    "flagged_actionable": 3,
+    "flagged_protected": 7,
+    "firm_savings": 24187.08,
+    "potential_savings": 15151.13
   },
   {
     "region": "Region 07",
@@ -7053,12 +6809,12 @@ const REGION_SUMMARY = [
     "hpd_vs_avg_pct": 17.5,
     "disposed_count": 2,
     "disposed_savings": 27244.67,
-    "suggested_removals": 2,
-    "pl_impact": 27244.67,
+    "suggested_removals": 1,
+    "pl_impact": 12093.54,
     "stores_below_avg": 2,
-    "flagged_actionable": 2,
-    "flagged_protected": 1,
-    "firm_savings": 27244.67,
+    "flagged_actionable": 1,
+    "flagged_protected": 2,
+    "firm_savings": 12093.54,
     "potential_savings": 0.0
   },
   {
@@ -7077,13 +6833,13 @@ const REGION_SUMMARY = [
     "hpd_vs_avg_pct": -1.7,
     "disposed_count": 4,
     "disposed_savings": 51431.75,
-    "suggested_removals": 5,
-    "pl_impact": 66582.88,
+    "suggested_removals": 4,
+    "pl_impact": 54489.34,
     "stores_below_avg": 6,
-    "flagged_actionable": 5,
-    "flagged_protected": 2,
-    "firm_savings": 36280.62,
-    "potential_savings": 30302.26
+    "flagged_actionable": 4,
+    "flagged_protected": 3,
+    "firm_savings": 12093.54,
+    "potential_savings": 42395.8
   }
 ];
 const STORE_SUMMARY_OP = [
@@ -7375,7 +7131,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #381041 to Store 117 Liberty Hill, retire their #381062."
+          "note": "Potential transfer — move flagged #381041 to Store 117 Liberty Hill (below-avg store), retire their #381062."
         }
       ],
       "proj_savings": 15151.13,
@@ -7527,7 +7283,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "Direct removal of flagged #381065."
+          "note": "Direct removal of flagged #381065 at below-avg store."
         }
       ],
       "proj_savings": 15151.13,
@@ -7720,46 +7476,19 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #382061 to Store 115 Midlothian, retire their #381085."
-        },
-        {
-          "asset": 382061,
-          "type": "8K Yard Forklift",
-          "age_mo": 51.8,
-          "annual_rate": 15151.13,
-          "hpd": 1.513,
-          "cph": 10.99,
-          "is_flagged": true,
-          "target_reason": "consolidation",
-          "trigger_asset": 382018,
-          "trigger_hpd": 1.562,
-          "trigger_cph": 2.92,
-          "trigger_type": "6K Yard Forklift",
-          "trigger_store": "18",
-          "trigger_store_name": "Abilene",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 2,
-          "new_hpd_rank": 10,
-          "hpd_rank_change": -16,
-          "new_ys_rank": 49,
-          "ys_rank_change": -16,
-          "tier_tag": "top20",
-          "cumulative_savings": 30302.26,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #382018 absorbs freed workload."
+          "note": "Potential transfer — move flagged #382061 to Store 115 Midlothian (below-avg store), retire their #381085."
         }
       ],
-      "proj_savings": 30302.26,
+      "proj_savings": 15151.13,
       "new_total_count": 6,
       "new_avg_hpd": 3.991,
       "new_ys_per_unit_bday": 8.8,
-      "firm_savings": 15151.13,
+      "firm_savings": 0,
       "potential_savings": 15151.13
     },
     "proj_hpd": 3.991,
     "proj_ys_per_unit": 8.8,
-    "proj_savings": 30302.26,
+    "proj_savings": 15151.13,
     "yt_tier": "middle",
     "disposed_count": 0,
     "disposed_assets": [],
@@ -7901,7 +7630,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "Direct removal of flagged #381067."
+          "note": "Direct removal of flagged #381067 at below-avg store."
         }
       ],
       "proj_savings": 15151.13,
@@ -8109,43 +7838,43 @@ const STORE_SUMMARY_OP = [
     "removal_impact": {
       "removals": [
         {
-          "asset": 381035,
-          "type": "6K Yard Forklift",
-          "age_mo": 53.2,
-          "annual_rate": 12093.54,
-          "hpd": 2.75,
-          "cph": 8.07,
-          "is_flagged": false,
-          "target_reason": "consolidation",
+          "asset": 382063,
+          "type": "8K Yard Forklift",
+          "age_mo": 51.9,
+          "annual_rate": 15151.13,
+          "hpd": 0.734,
+          "cph": 16.19,
+          "is_flagged": true,
+          "target_reason": "transfer",
           "trigger_asset": 384016,
           "trigger_hpd": 1.344,
           "trigger_cph": 6.88,
           "trigger_type": "8K Yard Forklift",
           "trigger_store": "30",
           "trigger_store_name": "San Angelo",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
+          "transfer_to_store": "87",
+          "transfer_to_store_name": "Fort Stockton",
           "step": 1,
           "new_hpd_rank": 15,
           "hpd_rank_change": -27,
           "new_ys_rank": 21,
           "ys_rank_change": -21,
           "tier_tag": "top20",
-          "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #384016 absorbs freed workload."
+          "cumulative_savings": 15151.13,
+          "status_label": "potential",
+          "note": "Potential transfer — move flagged #384016 to Store 87 Fort Stockton (below-avg store), retire their #382063."
         }
       ],
-      "proj_savings": 12093.54,
+      "proj_savings": 15151.13,
       "new_total_count": 6,
-      "new_avg_hpd": 3.466,
+      "new_avg_hpd": 3.7,
       "new_ys_per_unit_bday": 11.13,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
+      "firm_savings": 0,
+      "potential_savings": 15151.13
     },
-    "proj_hpd": 3.466,
+    "proj_hpd": 3.7,
     "proj_ys_per_unit": 11.13,
-    "proj_savings": 12093.54,
+    "proj_savings": 15151.13,
     "yt_tier": "middle",
     "disposed_count": 1,
     "disposed_assets": [
@@ -8285,7 +8014,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 12093.54,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #382019 to Store 43 Huntsville, retire their #381008."
+          "note": "Potential transfer — move flagged #382019 to Store 43 Huntsville (below-avg store), retire their #381008."
         }
       ],
       "proj_savings": 12093.54,
@@ -8334,46 +8063,10 @@ const STORE_SUMMARY_OP = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 381072,
-          "type": "8K Yard Forklift",
-          "age_mo": 52.0,
-          "annual_rate": 15151.13,
-          "hpd": 1.606,
-          "cph": 14.78,
-          "is_flagged": true,
-          "target_reason": "direct",
-          "trigger_asset": 381072,
-          "trigger_hpd": 1.606,
-          "trigger_cph": 14.78,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "35",
-          "trigger_store_name": "Odessa",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 13,
-          "hpd_rank_change": -16,
-          "new_ys_rank": 38,
-          "ys_rank_change": -14,
-          "tier_tag": "top20",
-          "cumulative_savings": 15151.13,
-          "status_label": "firm",
-          "note": "Direct removal of flagged #381072."
-        }
-      ],
-      "proj_savings": 15151.13,
-      "new_total_count": 6,
-      "new_avg_hpd": 3.855,
-      "new_ys_per_unit_bday": 9.73,
-      "firm_savings": 15151.13,
-      "potential_savings": 0
-    },
-    "proj_hpd": 3.855,
-    "proj_ys_per_unit": 9.73,
-    "proj_savings": 15151.13,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 1,
     "disposed_assets": [
@@ -8437,7 +8130,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #382060 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #382060 absorbs freed workload."
         }
       ],
       "proj_savings": 15151.13,
@@ -8630,7 +8323,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384021 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384021 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -8818,7 +8511,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384014 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384014 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -8892,7 +8585,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #384025 to Store 90 Okmulgee, retire their #384031."
+          "note": "Potential transfer — move flagged #384025 to Store 90 Okmulgee (below-avg store), retire their #384031."
         }
       ],
       "proj_savings": 15151.13,
@@ -8966,7 +8659,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #384024 to Store 71 Nacogdoches, retire their #381081."
+          "note": "Potential transfer — move flagged #384024 to Store 71 Nacogdoches (below-avg store), retire their #381081."
         }
       ],
       "proj_savings": 15151.13,
@@ -9132,22 +8825,22 @@ const STORE_SUMMARY_OP = [
     "removal_impact": {
       "removals": [
         {
-          "asset": 378034,
+          "asset": 381027,
           "type": "6K Yard Forklift",
-          "age_mo": 98.2,
+          "age_mo": 52.0,
           "annual_rate": 12093.54,
-          "hpd": 3.736,
-          "cph": 5.03,
+          "hpd": 2.516,
+          "cph": 11.47,
           "is_flagged": false,
-          "target_reason": "consolidation",
+          "target_reason": "transfer",
           "trigger_asset": 383086,
           "trigger_hpd": 0.363,
           "trigger_cph": 4.24,
           "trigger_type": "6K Yard Forklift",
           "trigger_store": "55",
           "trigger_store_name": "Georgetown",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
+          "transfer_to_store": "118",
+          "transfer_to_store_name": "Spicewood",
           "step": 1,
           "new_hpd_rank": 18,
           "hpd_rank_change": -20,
@@ -9155,18 +8848,18 @@ const STORE_SUMMARY_OP = [
           "ys_rank_change": -10,
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #383086 absorbs freed workload."
+          "status_label": "potential",
+          "note": "Potential transfer — move flagged #383086 to Store 118 Spicewood (below-avg store), retire their #381027."
         }
       ],
       "proj_savings": 12093.54,
       "new_total_count": 8,
-      "new_avg_hpd": 3.393,
+      "new_avg_hpd": 3.815,
       "new_ys_per_unit_bday": 8.82,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
+      "firm_savings": 0,
+      "potential_savings": 12093.54
     },
-    "proj_hpd": 3.393,
+    "proj_hpd": 3.815,
     "proj_ys_per_unit": 8.82,
     "proj_savings": 12093.54,
     "yt_tier": "middle",
@@ -9203,46 +8896,10 @@ const STORE_SUMMARY_OP = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 378008,
-          "type": "6K Yard Forklift",
-          "age_mo": 101.9,
-          "annual_rate": 12093.54,
-          "hpd": 3.678,
-          "cph": 5.93,
-          "is_flagged": false,
-          "target_reason": "consolidation",
-          "trigger_asset": 384062,
-          "trigger_hpd": 1.949,
-          "trigger_cph": 3.52,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "57",
-          "trigger_store_name": "Tomball",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 15,
-          "hpd_rank_change": -26,
-          "new_ys_rank": 50,
-          "ys_rank_change": -16,
-          "tier_tag": "top20",
-          "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #384062 absorbs freed workload."
-        }
-      ],
-      "proj_savings": 12093.54,
-      "new_total_count": 6,
-      "new_avg_hpd": 3.325,
-      "new_ys_per_unit_bday": 8.69,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
-    },
-    "proj_hpd": 3.325,
-    "proj_ys_per_unit": 8.69,
-    "proj_savings": 12093.54,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 0,
     "disposed_assets": [],
@@ -9380,7 +9037,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "bottom20",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "Direct removal of flagged #378016."
+          "note": "Direct removal of flagged #378016 at below-avg store."
         }
       ],
       "proj_savings": 12093.54,
@@ -9427,46 +9084,10 @@ const STORE_SUMMARY_OP = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 382079,
-          "type": "6K Yard Forklift",
-          "age_mo": 50.1,
-          "annual_rate": 12093.54,
-          "hpd": 3.211,
-          "cph": 6.51,
-          "is_flagged": false,
-          "target_reason": "consolidation",
-          "trigger_asset": 384028,
-          "trigger_hpd": 1.783,
-          "trigger_cph": 2.7,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "62",
-          "trigger_store_name": "Austin Manchaca",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 13,
-          "hpd_rank_change": -15,
-          "new_ys_rank": 21,
-          "ys_rank_change": -23,
-          "tier_tag": "top20",
-          "cumulative_savings": 12093.54,
-          "status_label": "firm",
-          "note": "In-store consolidation — flagged #384028 absorbs freed workload."
-        }
-      ],
-      "proj_savings": 12093.54,
-      "new_total_count": 6,
-      "new_avg_hpd": 3.596,
-      "new_ys_per_unit_bday": 11.1,
-      "firm_savings": 12093.54,
-      "potential_savings": 0
-    },
-    "proj_hpd": 3.596,
-    "proj_ys_per_unit": 11.1,
-    "proj_savings": 12093.54,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 1,
     "disposed_assets": [
@@ -9655,46 +9276,10 @@ const STORE_SUMMARY_OP = [
     "is_move20": false,
     "is_below_min": false,
     "is_at_min": false,
-    "removal_impact": {
-      "removals": [
-        {
-          "asset": 384017,
-          "type": "8K Yard Forklift",
-          "age_mo": 31.1,
-          "annual_rate": 15151.13,
-          "hpd": 1.357,
-          "cph": 6.02,
-          "is_flagged": true,
-          "target_reason": "direct",
-          "trigger_asset": 384017,
-          "trigger_hpd": 1.357,
-          "trigger_cph": 6.02,
-          "trigger_type": "8K Yard Forklift",
-          "trigger_store": "70",
-          "trigger_store_name": "San Marcos",
-          "transfer_to_store": null,
-          "transfer_to_store_name": null,
-          "step": 1,
-          "new_hpd_rank": 4,
-          "hpd_rank_change": -13,
-          "new_ys_rank": 21,
-          "ys_rank_change": -16,
-          "tier_tag": "top20",
-          "cumulative_savings": 15151.13,
-          "status_label": "firm",
-          "note": "Direct removal of flagged #384017."
-        }
-      ],
-      "proj_savings": 15151.13,
-      "new_total_count": 7,
-      "new_avg_hpd": 4.219,
-      "new_ys_per_unit_bday": 11.17,
-      "firm_savings": 15151.13,
-      "potential_savings": 0
-    },
-    "proj_hpd": 4.219,
-    "proj_ys_per_unit": 11.17,
-    "proj_savings": 15151.13,
+    "removal_impact": null,
+    "proj_hpd": null,
+    "proj_ys_per_unit": null,
+    "proj_savings": null,
     "yt_tier": "middle",
     "disposed_count": 0,
     "disposed_assets": [],
@@ -9832,7 +9417,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #381084 to Store 121 New Caney, retire their #381051."
+          "note": "Potential transfer — move flagged #381084 to Store 121 New Caney (below-avg store), retire their #381051."
         }
       ],
       "proj_savings": 15151.13,
@@ -10362,7 +9947,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 15151.13,
           "status_label": "potential",
-          "note": "Potential transfer — move flagged #381076 to Store 58 Gonzales, retire their #381078."
+          "note": "Potential transfer — move flagged #381076 to Store 58 Gonzales (below-avg store), retire their #381078."
         }
       ],
       "proj_savings": 15151.13,
@@ -10436,7 +10021,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384072 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384072 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -10816,7 +10401,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 15151.13,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384106 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384106 absorbs freed workload."
         }
       ],
       "proj_savings": 15151.13,
@@ -10928,7 +10513,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #381085 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #381085 absorbs freed workload."
         }
       ],
       "proj_savings": 12093.54,
@@ -11040,7 +10625,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "Direct removal of flagged #381036."
+          "note": "Direct removal of flagged #381036 at below-avg store."
         }
       ],
       "proj_savings": 12093.54,
@@ -11154,7 +10739,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "middle",
           "cumulative_savings": 12093.54,
           "status_label": "firm",
-          "note": "Direct removal of flagged #383005."
+          "note": "Direct removal of flagged #383005 at below-avg store."
         },
         {
           "asset": 383015,
@@ -11181,7 +10766,7 @@ const STORE_SUMMARY_OP = [
           "tier_tag": "top20",
           "cumulative_savings": 24187.08,
           "status_label": "firm",
-          "note": "In-store consolidation — flagged #384004 absorbs freed workload."
+          "note": "In-store consolidation at below-avg store — flagged #384004 absorbs freed workload."
         }
       ],
       "proj_savings": 24187.08,
