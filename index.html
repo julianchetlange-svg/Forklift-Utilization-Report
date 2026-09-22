@@ -782,6 +782,15 @@
     <br><strong style="color:#2D6A2D">Data refreshed:</strong> 14 days of DVIR readings (8/31–9/15) · Spend data through 9/15 · Fleet Avg CPH $5.52
   </div>
 
+  <div style="background:#FBFBFB;border:1px solid #E5E5E5;border-radius:4px;padding:12px 16px;margin-bottom:14px">
+  <div style="font-weight:600;color:#305496;margin-bottom:8px;font-size:13px">Movement Types</div>
+  <table style="font-size:12px;line-height:1.5;border-collapse:collapse">
+    <tr><td style="padding:3px 12px 3px 0;vertical-align:top"><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td><td>The flagged unit <strong>stays put</strong> — a different (older or higher-cost) unit at the same store gets terminated instead. Same-store reduction.</td></tr>
+    <tr><td style="padding:3px 12px 3px 0;vertical-align:top"><span style="background:#FFF8E1;color:#7F6000;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Transfer</span></td><td>The flagged unit <strong>moves</strong> to a different store in the same region, replacing a unit there that gets terminated.</td></tr>
+    <tr><td style="padding:3px 12px 3px 0;vertical-align:top"><span style="background:#FEF0F0;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Direct</span></td><td>The flagged unit <strong>is</strong> the best removal candidate — terminated in place, no substitution.</td></tr>
+  </table>
+</div>
+
   <div class="kpi-grid">
     <div class="kpi" style="border-left:3px solid var(--green)"><div class="kpi-label">Firm Removals</div><div class="kpi-value" style="color:var(--green)">14</div><div class="kpi-sub">$184,598/yr · beyond 84mo or Heli</div></div>
     <div class="kpi yellow"><div class="kpi-label">Potential Reallocations</div><div class="kpi-value">6</div><div class="kpi-sub">$78,676/yr · Toyota under 84mo</div></div>
@@ -849,161 +858,214 @@
   </div>
 
   <div class="section-hdr" style="margin-top:20px"><h2>Firm Removals (14 · $184,598/yr)</h2></div>
-  <p style="font-size:12px;color:#666;margin:0 0 10px 0">Units beyond 84 months OR Heli manufacturer (Heli units disposed regardless of age). Ready for Ron approval.</p>
+  <p style="font-size:12px;color:#666;margin:0 0 10px 0">Units beyond 84 months OR Heli manufacturer. Ready for Ron approval. Action column describes the specific movement.</p>
   <div class="table-wrap">
     <table>
       <thead><tr>
-        <th>Region</th><th>Store #</th><th>Store Name</th>
-        <th>Flagged Asset</th><th class="num">Flag HPD</th>
-        <th>Removal Type</th><th>Removed Asset</th><th>Type</th>
-        <th class="num">Age</th><th class="num">HPD</th><th class="num">CPH</th><th>Reason</th>
-        <th class="num">Annual Savings</th>
+        <th>Region</th><th>Type</th><th style="min-width:340px">Action</th>
+        <th>Unit Type</th><th>Mfg</th><th class="num">Age</th><th class="num">HPD</th><th class="num">CPH</th>
+        <th class="num">Lifecycle</th><th class="num">Annual Savings</th>
       </tr></thead>
-      <tbody><tr style="background:#FFF8E1">
-      <td>Region 01</td><td>34</td><td>Bryan</td>
-      <td>#382019</td><td class="num">1.31</td>
-      <td>Transfer</td><td>#381008 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>6K Yard Forklift</td><td class="num">54.2mo</td><td class="num">2.45</td>
-      <td class="num">$12.30</td><td class="num">Heli</td>
+      <tbody><tr>
+      <td>Region 01</td>
+      <td><span style="background:#FFF8E1;color:#7F6000;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Transfer</span></td>
+      <td style="font-size:12px;line-height:1.4">Move flagged <strong>#382019</strong> from 34 Bryan to 43 Huntsville; terminate <strong>#381008</strong> there</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">2.45</td>
+      <td class="num">$12.30</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 01</td><td>36</td><td>Lufkin</td>
-      <td>#382060</td><td class="num">0.78</td>
-      <td>Consolidation</td><td>#381038 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>8K Yard Forklift</td><td class="num">54.7mo</td><td class="num">0.98</td>
-      <td class="num">$9.28</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 01</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#382060</strong> stays at 36 Lufkin; terminate older/higher-cost <strong>#381038</strong> at same store</td>
+      <td>8K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">55mo</td>
+      <td class="num">0.98</td>
+      <td class="num">$9.28</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#FEF0F0">
-      <td>Region 01</td><td>61</td><td>Mt. Pleasant</td>
-      <td>#378016</td><td class="num">1.16</td>
-      <td>Direct</td><td>#378016 <span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
-      <td>6K Yard Forklift</td><td class="num">103.7mo</td><td class="num">1.16</td>
-      <td class="num">$12.27</td><td class="num">≥84mo</td>
+    </tr><tr>
+      <td>Region 01</td>
+      <td><span style="background:#FEF0F0;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Direct</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#378016</strong> at 61 Mt. Pleasant is itself the removal candidate — terminate directly</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
+      <td class="num">104mo</td>
+      <td class="num">1.16</td>
+      <td class="num">$12.27</td>
+      <td class="num">≥84mo</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#FFF8E1">
-      <td>Region 02</td><td>18</td><td>Abilene</td>
-      <td>#382018</td><td class="num">1.58</td>
-      <td>Transfer</td><td>#378018 <span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
-      <td>6K Yard Forklift</td><td class="num">103.7mo</td><td class="num">2.37</td>
-      <td class="num">$6.58</td><td class="num">≥84mo</td>
+    </tr><tr>
+      <td>Region 02</td>
+      <td><span style="background:#FFF8E1;color:#7F6000;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Transfer</span></td>
+      <td style="font-size:12px;line-height:1.4">Move flagged <strong>#382018</strong> from 18 Abilene to 63 Gainesville; terminate <strong>#378018</strong> there</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
+      <td class="num">104mo</td>
+      <td class="num">2.37</td>
+      <td class="num">$6.58</td>
+      <td class="num">≥84mo</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 02</td><td>83</td><td>Duncan</td>
-      <td>#384039</td><td class="num">1.58</td>
-      <td>Consolidation</td><td>#379005 <span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
-      <td>6K Yard Forklift</td><td class="num">89.6mo</td><td class="num">3.03</td>
-      <td class="num">$4.41</td><td class="num">≥84mo</td>
+    </tr><tr>
+      <td>Region 02</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#384039</strong> stays at 83 Duncan; terminate older/higher-cost <strong>#379005</strong> at same store</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
+      <td class="num">90mo</td>
+      <td class="num">3.03</td>
+      <td class="num">$4.41</td>
+      <td class="num">≥84mo</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 02</td><td>115</td><td>Midlothian</td>
-      <td>#381085</td><td class="num">0.71</td>
-      <td>Consolidation</td><td>#378032 <span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
-      <td>6K Yard Forklift</td><td class="num">94.2mo</td><td class="num">1.47</td>
-      <td class="num">$14.09</td><td class="num">≥84mo</td>
+    </tr><tr>
+      <td>Region 02</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#381085</strong> stays at 115 Midlothian; terminate older/higher-cost <strong>#378032</strong> at same store</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
+      <td class="num">94mo</td>
+      <td class="num">1.47</td>
+      <td class="num">$14.09</td>
+      <td class="num">≥84mo</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#FEF0F0">
-      <td>Region 03</td><td>24</td><td>Pasadena</td>
-      <td>#381067</td><td class="num">1.63</td>
-      <td>Direct</td><td>#381067 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>8K Yard Forklift</td><td class="num">54.3mo</td><td class="num">1.63</td>
-      <td class="num">$21.10</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 03</td>
+      <td><span style="background:#FEF0F0;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Direct</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#381067</strong> at 24 Pasadena is itself the removal candidate — terminate directly</td>
+      <td>8K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">1.63</td>
+      <td class="num">$21.10</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 03</td><td>113</td><td>Montgomery</td>
-      <td>#384106</td><td class="num">0.65</td>
-      <td>Consolidation</td><td>#381087 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>8K Yard Forklift</td><td class="num">55.2mo</td><td class="num">2.74</td>
-      <td class="num">$9.21</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 03</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#384106</strong> stays at 113 Montgomery; terminate older/higher-cost <strong>#381087</strong> at same store</td>
+      <td>8K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">55mo</td>
+      <td class="num">2.74</td>
+      <td class="num">$9.21</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#FEF0F0">
-      <td>Region 04</td><td>13</td><td>Richwood</td>
-      <td>#381065</td><td class="num">1.82</td>
-      <td>Direct</td><td>#381065 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>8K Yard Forklift</td><td class="num">53.7mo</td><td class="num">1.82</td>
-      <td class="num">$15.76</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 04</td>
+      <td><span style="background:#FEF0F0;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Direct</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#381065</strong> at 13 Richwood is itself the removal candidate — terminate directly</td>
+      <td>8K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">1.82</td>
+      <td class="num">$15.76</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 05</td><td>97</td><td>Eagle Pass</td>
-      <td>#384072</td><td class="num">1.86</td>
-      <td>Consolidation</td><td>#381013 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>6K Yard Forklift</td><td class="num">54.0mo</td><td class="num">2.46</td>
-      <td class="num">$11.63</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 05</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#384072</strong> stays at 97 Eagle Pass; terminate older/higher-cost <strong>#381013</strong> at same store</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">2.46</td>
+      <td class="num">$11.63</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 08</td><td>55</td><td>Georgetown</td>
-      <td>#383086</td><td class="num">0.44</td>
-      <td>Consolidation</td><td>#378034 <span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
-      <td>6K Yard Forklift</td><td class="num">98.8mo</td><td class="num">3.52</td>
-      <td class="num">$5.31</td><td class="num">≥84mo</td>
+    </tr><tr>
+      <td>Region 08</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#383086</strong> stays at 55 Georgetown; terminate older/higher-cost <strong>#378034</strong> at same store</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#EEE;color:#555;padding:1px 5px;border-radius:3px;font-size:10px">Toyota</span></td>
+      <td class="num">99mo</td>
+      <td class="num">3.52</td>
+      <td class="num">$5.31</td>
+      <td class="num">≥84mo</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#FEF0F0">
-      <td>Region 08</td><td>74</td><td>Bee Cave</td>
-      <td>#381084</td><td class="num">0.73</td>
-      <td>Direct</td><td>#381084 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>8K Yard Forklift</td><td class="num">53.8mo</td><td class="num">0.73</td>
-      <td class="num">$9.94</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 08</td>
+      <td><span style="background:#FEF0F0;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Direct</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#381084</strong> at 74 Bee Cave is itself the removal candidate — terminate directly</td>
+      <td>8K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">0.73</td>
+      <td class="num">$9.94</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 08</td><td>117</td><td>Liberty Hill</td>
-      <td>#381062</td><td class="num">1.19</td>
-      <td>Consolidation</td><td>#381003 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>6K Yard Forklift</td><td class="num">54.2mo</td><td class="num">3.37</td>
-      <td class="num">$10.45</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 08</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#381062</strong> stays at 117 Liberty Hill; terminate older/higher-cost <strong>#381003</strong> at same store</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">3.37</td>
+      <td class="num">$10.45</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
-    </tr><tr style="background:#FEF0F0">
-      <td>Region 08</td><td>117</td><td>Liberty Hill</td>
-      <td>#381036</td><td class="num">1.43</td>
-      <td>Direct</td><td>#381036 <span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
-      <td>6K Yard Forklift</td><td class="num">54.1mo</td><td class="num">1.43</td>
-      <td class="num">$10.58</td><td class="num">Heli</td>
+    </tr><tr>
+      <td>Region 08</td>
+      <td><span style="background:#FEF0F0;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Direct</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#381036</strong> at 117 Liberty Hill is itself the removal candidate — terminate directly</td>
+      <td>6K Yard Forklift</td>
+      <td><span style="background:#FFE599;color:#7F6000;padding:1px 5px;border-radius:3px;font-size:10px;font-weight:600">Heli</span></td>
+      <td class="num">54mo</td>
+      <td class="num">1.43</td>
+      <td class="num">$10.58</td>
+      <td class="num">Heli</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
     </tr></tbody>
     </table>
   </div>
 
   <div class="section-hdr" style="margin-top:20px"><h2>Potential Reallocations (6 · $78,676/yr)</h2></div>
-  <p style="font-size:12px;color:#666;margin:0 0 10px 0">Toyota units under 84mo — reallocate to stores with beyond-lifecycle units. Fleet team logistics review needed.</p>
+  <p style="font-size:12px;color:#666;margin:0 0 10px 0">Toyota units under 84mo. Fleet team logistics review needed.</p>
   <div class="table-wrap">
     <table>
       <thead><tr>
-        <th>Region</th><th>From Store</th><th>Store Name</th>
-        <th>Flagged Asset</th><th>Category</th><th>Action</th>
+        <th>Region</th><th>Category</th><th style="min-width:400px">Action</th>
         <th class="num">Annual Savings</th><th>Decision</th>
       </tr></thead>
-      <tbody><tr style="background:#E8F5E9">
-      <td>Region 02</td><td>47</td><td>Waco</td>
-      <td>#384025 (8K Yard Forklift)</td>
-      <td>Reallocation</td><td>Reallocate to Store 116 Bay City, retire aging #379013 (86mo, Owned)</td>
+      <tbody><tr>
+      <td>Region 02</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span> <span style="font-size:10px;color:#666">Reallocation</span></td>
+      <td style="font-size:12px;line-height:1.4">Move flagged <strong>#384025</strong> from 47 Waco to 116 Bay City; terminate aging <strong>#379013</strong> (86mo Owned) there</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option>Include</option><option>Exclude</option></select></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 04</td><td>40</td><td>Beeville</td>
-      <td>#384021 (8K Yard Forklift)</td>
-      <td>Reallocation</td><td>Reallocate to Store 20 Victoria, retire aging #378004 (103mo, Owned)</td>
+    </tr><tr>
+      <td>Region 04</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span> <span style="font-size:10px;color:#666">Reallocation</span></td>
+      <td style="font-size:12px;line-height:1.4">Move flagged <strong>#384021</strong> from 40 Beeville to 20 Victoria; terminate aging <strong>#378004</strong> (103mo Owned) there</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option>Include</option><option>Exclude</option></select></td>
-    </tr><tr style="background:#FEE9E9">
-      <td>Region 06</td><td>119</td><td>Lubbock</td>
-      <td>#383005 (4K Yard Forklift)</td>
-      <td>Fleet Review</td><td>Toyota, no lifecycle match — Fleet team to reallocate manually</td>
+    </tr><tr>
+      <td>Region 06</td>
+      <td><span style="background:#FEE9E9;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Fleet Review</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#383005</strong> at 119 Lubbock is Toyota under 84mo — Fleet team to reallocate manually (no lifecycle destination match)</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option>Include</option><option>Exclude</option></select></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 06</td><td>119</td><td>Lubbock</td>
-      <td>#384003 (8K Yard Forklift)</td>
-      <td>Reallocation</td><td>Reallocate to Store 75 El Paso, retire aging #379001 (90mo, Owned)</td>
+    </tr><tr>
+      <td>Region 06</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span> <span style="font-size:10px;color:#666">Reallocation</span></td>
+      <td style="font-size:12px;line-height:1.4">Move flagged <strong>#384003</strong> from 119 Lubbock to 75 El Paso; terminate aging <strong>#379001</strong> (90mo Owned) there</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option>Include</option><option>Exclude</option></select></td>
-    </tr><tr style="background:#FEE9E9">
-      <td>Region 06</td><td>119</td><td>Lubbock</td>
-      <td>#384004 (8K Yard Forklift)</td>
-      <td>Fleet Review</td><td>Toyota, no lifecycle match — Fleet team to reallocate manually</td>
+    </tr><tr>
+      <td>Region 06</td>
+      <td><span style="background:#FEE9E9;color:#B44;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Fleet Review</span></td>
+      <td style="font-size:12px;line-height:1.4">Flagged <strong>#384004</strong> at 119 Lubbock is Toyota under 84mo — Fleet team to reallocate manually (no lifecycle destination match)</td>
       <td class="num"><strong style="color:var(--green)">$15,151</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option>Include</option><option>Exclude</option></select></td>
-    </tr><tr style="background:#E8F5E9">
-      <td>Region 07</td><td>44</td><td>Kerrville</td>
-      <td>#384014 (8K Yard Forklift)</td>
-      <td>Reallocation</td><td>Reallocate to Store 111 Floresville, retire aging #378013 (102mo, Owned)</td>
+    </tr><tr>
+      <td>Region 07</td>
+      <td><span style="background:#E8F5E9;color:#2D6A2D;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600">Consolidation</span> <span style="font-size:10px;color:#666">Reallocation</span></td>
+      <td style="font-size:12px;line-height:1.4">Move flagged <strong>#384014</strong> from 44 Kerrville to 111 Floresville; terminate aging <strong>#378013</strong> (102mo Owned) there</td>
       <td class="num"><strong style="color:var(--green)">$12,094</strong></td>
       <td><select style="font-size:12px;padding:2px 6px"><option value="">—</option><option>Include</option><option>Exclude</option></select></td>
     </tr></tbody>
@@ -1011,6 +1073,7 @@
   </div>
 
 </div>
+
 
 
 
