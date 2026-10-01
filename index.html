@@ -23206,11 +23206,23 @@ window.addEventListener('load', () => {
                 x: { title: { display: true, text: 'HPD range', font: { size: 11 } } } } }
   });
 
-  // Spend distribution
+  // Spend distribution — compute dynamically from ASSET_DETAIL
+  const spendBuckets = [0,0,0,0,0,0,0];
+  ASSET_DETAIL.forEach(a => {
+    const s = a.adj_spend;
+    if (s == null) return;
+    if (s < 5000) spendBuckets[0]++;
+    else if (s < 15000) spendBuckets[1]++;
+    else if (s < 30000) spendBuckets[2]++;
+    else if (s < 50000) spendBuckets[3]++;
+    else if (s < 75000) spendBuckets[4]++;
+    else if (s < 100000) spendBuckets[5]++;
+    else spendBuckets[6]++;
+  });
   new Chart(document.getElementById('chartSpend'), {
     type: 'bar',
     data: { labels: ['<$5K','$5K–15K','$15K–30K','$30K–50K','$50K–75K','$75K–100K','>$100K'],
-      datasets: [{ data: [79,151,111,80,24,7,7], backgroundColor: '#F5C400', borderRadius: 4 }] },
+      datasets: [{ data: spendBuckets, backgroundColor: '#F5C400', borderRadius: 4 }] },
     options: { responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: { y: { title: { display: true, text: '# assets', font: { size: 11 } } } } }
@@ -23218,16 +23230,18 @@ window.addEventListener('load', () => {
 
   // Ownership
   const ownData = ASSET_DETAIL.reduce((a,d) => { a[d.ownership] = (a[d.ownership]||0)+1; return a; }, {});
+  const ownedCount = (ownData['Owned']||0);
+  const leasedCount = (ownData['Lease']||0) + (ownData['Operating Lease']||0);
   new Chart(document.getElementById('chartOwnership'), {
     type: 'doughnut',
     data: { labels: ['Company Owned','Operating Lease'],
-      datasets: [{ data: [361,137], backgroundColor: ['#2D6A2D','#F5C400'], borderWidth: 2, borderColor: '#fff' }] },
+      datasets: [{ data: [ownedCount, leasedCount], backgroundColor: ['#2D6A2D','#F5C400'], borderWidth: 2, borderColor: '#fff' }] },
     options: { responsive: true, maintainAspectRatio: false, cutout: '60%',
       plugins: { legend: { display: false } } }
   });
   document.getElementById('ownership-breakdown').innerHTML =
-    `<strong style="color:var(--green)">Company Owned:</strong> 361 assets (72.6%)<br>
-     <strong style="color:var(--yellow-mid)">Operating Lease:</strong> 136 assets (27.4%)<br><br>
+    `<strong style="color:var(--green)">Company Owned:</strong> ${ownedCount} assets (${(ownedCount/(ownedCount+leasedCount)*100).toFixed(1)}%)<br>
+     <strong style="color:var(--yellow-mid)">Operating Lease:</strong> ${leasedCount} assets (${(leasedCount/(ownedCount+leasedCount)*100).toFixed(1)}%)<br><br>
      <span style="color:var(--gray-3);font-size:12px">All operating leases are terminable at any time.<br>
      New 2026 acquisitions are 100% company-owned cash purchases.</span>`;
 
